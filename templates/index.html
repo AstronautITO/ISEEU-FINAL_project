@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Video Conferencing</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <h3>Video Conferencing</h3>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="main__left">
+            <div class="videos__group" id="video-grid"></div>
+            <div class="options">
+                <div class="options__left">
+                    <!-- Use Font Awesome icons instead of text -->
+                    <button class="options__button background__red" id="toggleVideo">
+                        <i class="fas fa-video"></i>
+                    </button>
+                    <button class="options__button" id="toggleAudio">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                </div>
+                <div class="options__right">
+                    <button class="options__button" id="showChat">Show Chat</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="main__right">
+            <div class="main__chat_window">
+                <div class="messages">
+                    <!-- Chat messages will appear here -->
+                </div>
+            </div>
+            <div class="main__message_container">
+                <input type="text" placeholder="Type your message...">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
